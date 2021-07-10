@@ -1,0 +1,123 @@
+:root{
+	
+	/*Primary*/
+
+	--Bright-orange: hsl(31, 77%, 52%);
+	--Dark-cyan: hsl(184, 100%, 22%);
+	--Darker-cyan: hsl(179, 100%, 13%);
+
+	/*Neutral*/
+
+	--Trans-white: hsla(0, 0%, 100%, 0.75); /*paragraph*/
+	--light-gray: hsl(0, 0%, 95%); /*background, headings, button*/
+}
+
+body{
+	font-size: 15px;
+	padding: 0;
+	margin:0;
+	display: flex;
+	flex-direction: column;
+	height: 10vh;
+	background-color: var(--light-gray);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: nowrap;    
+    justify-content: center;
+    align-content: stretch;    
+    align-items: center;
+    margin-top: 6%;
+    flex-grow: 1;
+}
+
+.flex-item{
+	padding: 50px 50px 25px 50px;
+}
+
+.flex-item:nth-child(1) {
+    order: 0;
+    flex: 0 2 15%;
+    align-self: center;
+    background-color: var(--Bright-orange);
+    border-radius: 5px 0px 0px 5px;
+}
+
+.flex-item:nth-child(2) {
+    order: 0;
+    flex: 0 2 15%;
+    align-self: center;
+    background-color: var(--Dark-cyan);
+}
+
+.flex-item:nth-child(3) {
+    order: 0;
+    flex: 0 2 15%;
+    align-self: center;
+    background-color: var(--Darker-cyan);
+    border-radius: 0px 5px 5px 0px;
+}
+
+.flex-item h1 {
+	font-family: 'Big Shoulders Display', cursive;
+	color: var(--light-gray);
+	padding-bottom: 7%;
+}
+
+.flex-item p {
+	padding-bottom: 80px;
+	font-family: 'Lexend Deca', sans-serif;
+	color: var(--Trans-white);
+	line-height: 2em
+}
+
+.button{
+	display: inline-block;
+	text-decoration: none;
+	font-family: 'Lexend Deca', sans-serif;
+	padding: 0.75rem 2rem;
+	border-radius: 10rem;
+	background-color: var(--light-gray);
+	color: black;
+	mix-blend-mode: screen;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.button:hover{
+  box-shadow: 0px 0px 0px 2px var(--light-gray);
+  background-color: black;
+  color: var(--light-gray);
+}
+
+
+/*responsive section*/
+
+@media screen and (max-width: 375px) {
+	.flex-container{
+		flex-direction: column;
+		padding: 17% 7%;
+	}
+	.flex-item{
+		padding: 40px 50px 15px 40px;
+	}
+	.flex-item h1{
+		font-size: 3rem;
+		padding-bottom: 0%;
+	}
+	.flex-item p {
+		padding-bottom: 10px;
+	}
+	.button{
+		margin-bottom: 30px;
+	}
+	.flex-item:nth-child(1) {
+	    border-radius: 5px 5px 0px 0px;
+	}
+	.flex-item:nth-child(3) {
+	    border-radius: 0px 0px 5px 5px;
+	}
+}
